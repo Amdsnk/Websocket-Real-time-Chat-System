@@ -15,6 +15,15 @@ export function setupSocketHandlers(io) {
     }
   });
 
+  import { io } from 'socket.io-client';
+
+const socket = io(import.meta.env.VITE_API_URL || 'https://websocket-real-time-chat-system-production.up.railway.app', {
+  auth: {
+    token: localStorage.getItem('token') // Send token for authentication
+  }
+});
+
+export default socket;
   io.on('connection', (socket) => {
     const userId = socket.user.id;
     connectedUsers.set(userId, socket.id);
