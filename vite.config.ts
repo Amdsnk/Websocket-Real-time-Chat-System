@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     host: true, // Expose the server to external connections
     port: 5173, // Default port for local development
-    strictPort: true, //
+    strictPort: true,
   },
   build: {
     outDir: 'dist', // Directory for built files
