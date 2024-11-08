@@ -7,12 +7,16 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-});
-
-export default defineConfig({
   server: {
-    host: true, // Exposes server for Railway
-    port: 5173,
-    strictPort: true,
+    host: true, // Expose the server to external connections
+    port: 5173, // Default port for local development
+    strictPort: true, //
+  },
+  build: {
+    outDir: 'dist', // Directory for built files
+  },
+  preview: {
+    port: 4173, // Port for previewing built files (important for Railway)
+    host: '0.0.0.0', // Expose the preview server
   },
 });
