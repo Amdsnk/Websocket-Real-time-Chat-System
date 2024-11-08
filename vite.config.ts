@@ -8,3 +8,10 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
+
+export default defineConfig({
+  server: {
+    host: true, // Exposes server for Railway
+    port: 5173,
+    strictPort: true,
+  },
